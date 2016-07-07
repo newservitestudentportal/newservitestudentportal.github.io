@@ -84,6 +84,45 @@
 					$('#navButton, #navPanel, #page-wrapper')
 						.css('transition', 'none');
 
+ google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawStuff);
+
+      function drawStuff() {
+        var data = new google.visualization.arrayToDataTable([
+          ['1', 'Points'],
+          ["Sostene", 50],
+          ["Hugh", 44],
+          ["Manetus", 31],
+          ["Bonajucta", 12],
+          ["Philip", 10],
+          ["Bonajuncta", 10],
+          ["Amideus", 10],
+           ["Alexis", 10],
+         
+        
+        ]);
+
+        var options = {
+          title: '',
+          width: 550,
+          legend: { position: 'none' },
+          chart: { subtitle: '' },
+          axes: {
+            x: {
+              0: { side: 'top', label: 'Priory Points'} // Top x-axis.
+            }
+          },
+          bar: { groupWidth: "90%" }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('top_x_div'));
+        // Convert the Classic options to Material options.
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      };
+
+
+
+
 	});
 
 })(jQuery);
