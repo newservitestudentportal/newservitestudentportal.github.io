@@ -97,7 +97,7 @@
           ["Philip", 10],
           ["Bonajuncta", 10],
           ["Amideus", 10],
-           ["Alexis", 10],
+          ["Alexis", 10],
          
         
         ]);
